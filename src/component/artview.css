@@ -1,0 +1,78 @@
+/* body{
+    box-sizing: border-box;
+
+} */
+.coll {
+text-align: center;
+width: 25%;
+border: 1px solid #ccc;
+box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+margin-bottom: 20px;
+background-color: #eee3e3;
+}
+.coll .img-holder{
+position: relative;
+
+overflow: hidden;
+}
+.coll .img-holder::after { content: ''; position: absolute; bottom: 0; right: 0; border-style: solid; border-width: 0px 0px 110px 500px; border-color: transparent transparent white transparent; transition: 0.5s ; -webkit-transition: 0.5s ; -moz-transition: 0.5s ; -ms-transition: 0.5s ; -o-transition: 0.5s ;
+}
+.coll .img-holder img{
+max-width: 100%;
+/* max-height: 500px; */
+}
+.coll:hover .img-holder::after{
+border-width: 170px 500px 170px 0;
+}.coll h2{
+position: relative;
+font-size: 40px;
+margin: auto;
+width: fit-content;
+}
+.coll h2:after{
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 15px;
+    height: 5px;
+   background-color: var(--second-color);
+    width: calc(100% - 30px);
+}
+.coll p {
+    line-height: 2;
+    font-size: 18px;
+    margin: 30px 0; 
+    padding: 25px;
+    color: #777;
+}
+.coll a{
+   display: block;
+   border: 1px solid var(--second-color);
+   width: fit-content;
+   text-decoration: none;
+   margin: 0 auto 30px;
+   font-weight: bold;
+   font-size: 20px;
+   padding: 10px 30px ;
+   color: var(--second-color);
+   background: linear-gradient(to right, #f44036 50%, white 50%);
+   background-size: 200% 100%;
+   background-position: right bottom;
+   transition:.5s ;
+   -webkit-transition:.5s ;
+   -moz-transition:.5s ;
+   -ms-transition:.5s ;
+   -o-transition:.5s ;
+}
+.coll:hover a{
+    background-position: left bottom;
+    color: white;
+}
+@media (max-width:778px)
+{
+    .coll {
+        width: 80%;
+        margin: auto;
+margin-bottom: 20px;
+    }
+}

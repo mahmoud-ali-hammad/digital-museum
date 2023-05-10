@@ -1,0 +1,13 @@
+.high h1{
+  text-transform: capitalize;
+  color: #777;
+  font-size: 40px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 10px;
+  width: fit-content;
+  border-bottom: 2px solid var(--second-color);
+  text-transform: capitalize;
+  font-family: 'prata';
+}

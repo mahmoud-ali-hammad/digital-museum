@@ -1,0 +1,25 @@
+.highlight{
+    background-color: white;
+    padding: 30px;
+}
+.highlight h1{
+    text-transform: capitalize;
+    color: #777;
+    font-size: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    width: fit-content;
+    border-bottom: 2px solid var(--second-color);
+}
+.highlight .highlight-cnt{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media (max-width: 778px)
+{
+    .highlight-cnt{
+        flex-direction: column;
+    }
+}

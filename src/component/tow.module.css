@@ -1,0 +1,4 @@
+a.active {
+color: var(--second-color);
+border-bottom: solid 1px var(--second-color) ;
+}

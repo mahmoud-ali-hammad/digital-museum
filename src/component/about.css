@@ -1,0 +1,112 @@
+.about{
+    background-color: #f8f9fa;
+}
+.cnt1{
+width: 80%;
+margin-left: auto;
+margin-right: auto;
+padding: 100px 20px;
+display: flex;
+flex-wrap: wrap;
+}
+.rabout{
+    width: 50%;text-align: center;
+}
+.rabout .txt1 {
+    font-size: 25px;
+    color:#6c757d ;
+    padding: 20px 0;
+    border-top: 3px solid var(--second-color) ;
+    width: fit-content;
+    text-align: center;
+    margin: auto;
+    
+}
+@media (max-width:787px) {
+.cnt1{
+    flex-direction: column;
+}
+    .rabout{
+    width: fit-content;
+}
+.rabout .txt1{
+text-align: center;
+    font-size: 18px;
+}
+.rabout .txt2 {
+    font-size: 25px;
+}
+
+}
+.rabout .txt2 {
+        font-family: "Prata";
+        color: #302e2f;
+        padding-bottom: 30px;
+}
+.rabout .txt3 {
+    color:#777777 ;
+    font-size: 18px;
+    font-weight: 500;
+}
+@media(max-width:767px)
+{
+    .rabout .txt3 {
+        font-size: 14px;
+    }
+}
+.btn3 {
+    color: white;
+    background-color: var(--second-color);
+    padding: 15px 30px;
+    font-size: 13px;
+    border: none;
+    border-radius:10px ;
+    -webkit-border-radius:10px ;
+    -moz-border-radius:10px ;
+    -ms-border-radius:10px ;
+    -o-border-radius:10px ;
+    text-transform: uppercase;
+        transition: all .4s ease;
+        margin-top: 20px;
+}
+.btn3:hover{
+    color: white;
+    background-color: #302e2f;
+}
+
+.labout  {
+margin: auto;
+position: relative;
+border: 1px solid #777;
+width: 406px;
+    height: 428px;
+}
+.labout .text h1{
+    font-family: "Prata";
+    color:#777777 ;
+}
+.labout .text h1 span{
+font-size: 60px;
+}
+.labout .image{
+    margin-right: 0px;
+    position: relative;
+}
+.labout .image img {
+    width: 240px;
+    height: 340px;
+    margin-right: 20px;
+    position: absolute;
+    right: 135px;
+    top: 30px;
+}
+.labout .image::after{
+content: "";
+    background-color: var(--second-color);
+    width: 100px;
+    height: 302px;
+    top: -27px;
+    position: absolute;
+    right: 101px;
+    z-index: -1;
+}

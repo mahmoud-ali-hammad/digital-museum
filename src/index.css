@@ -5,9 +5,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+/* list-style: none; */
+background-color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+:root{
+  --main-color:#403e3f;
+  --second-color:#d99578;
+  transition: 0.5s; ;
+  -webkit-transition:.5s ;
+  -moz-transition:.5s ;
+  -ms-transition:.5s ;
+  -o-transition:.5s ;
+}
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;} */
+  /* a {text-decoration: none;
+  color: black;
+  } */
