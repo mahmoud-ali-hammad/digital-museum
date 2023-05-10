@@ -23,7 +23,7 @@ function HomePage() {
 useEffect(()=>{
   const fetchData = async () => {
   try {
-    const response = await fetch("https://dmss.onrender.com/Meseum-Info/");
+    const response = await fetch("https://digital-museum-production.up.railway.app/Meseum-Info/");
     const data = await response.json();
     setHdata(data);
     setLoading(false);
