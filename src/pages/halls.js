@@ -11,7 +11,7 @@ const [loading,setLoading]=useState(false)
   useEffect(()=>{
     const fetchData = async () => {
     try {
-      const response = await fetch(`http://digital-museum-production.up.railway.app/arts/artobjects/?active=&epoch=&hall__name=${id}&highlighted=`);
+      const response = await fetch(`https://digital-museum-production.up.railway.app/arts/artobjects/?hall__name=${id}`);
       const data = await response.json();
       setHalls(data.results.map((info)=>
  {return {desc:info.description,
