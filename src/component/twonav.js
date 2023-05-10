@@ -14,7 +14,7 @@ function Twonav() {
   useEffect(()=>{
     const fetchData = async () => {
     try {
-      const response = await fetch("http://digital-museum-production.up.railway.app/arts/halls/"
+      const response = await fetch("https://digital-museum-production.up.railway.app/arts/halls/"
     );
       const data = await response.json();
       setHalls(data.results);
