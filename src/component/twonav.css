@@ -24,6 +24,7 @@
   text-transform: capitalize;
   color: white;
   padding-bottom: 12px;
+  text-align: center;
 }
 .ch1 .logo1 .logo {
   height: 30;
@@ -64,9 +65,9 @@ ul li {
 .drop-down {
   position: absolute;
   display: block;
-  width: 150px;
+  width: 250px;
   right: 33px;
-  background: rgba(255, 255, 255, 0.606);
+  background: rgba(6, 5, 5, 0.606);
   z-index: 2;
   top: 66px;
   padding: 0;
@@ -76,16 +77,16 @@ ul li {
   margin: 0;
 }
 .drop-down li a {
-  color: black;
+  color: rgb(249, 247, 247);
 }
 .drop-down li:hover {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.305);
 }
 .drop-down::before {
   content: '';
   border-width: 10px;
   border-style: solid;
-  border-color: transparent transparent white transparent;
+  border-color: transparent transparent rgba(255, 255, 255, 0.305) transparent;
   position: absolute;
   right: 5px;
   top: -20px;
@@ -97,7 +98,9 @@ li:hover {
   border: none;
 }
 .me:hover .drop-down {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (max-width: 778px) {
@@ -127,4 +130,95 @@ a {
 }
 a:visited {
   color: white;
+}
+.mg{
+  position: relative;
+}
+.drop{
+  z-index: 99;
+  position: absolute;
+  width: 40%;
+  background-color: white;
+  right: 15px;
+  margin-top: 15px;
+}
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav > .nav-header {
+  flex: 0.95;
+  padding-left: 1rem;
+}
+.nav > .nav-header > .nav-title {
+  font-size: 22px;
+  color: #fff;
+}
+.nav > .nav-list {
+  display: flex;
+  gap: 2rem;
+}
+.nav > .nav-list > li {
+  list-style-type: none;
+}
+.nav > .nav-list > li a {
+  text-decoration: none;
+  color: #efefef;
+  cursor: pointer;
+}
+.nav > #nav-check {
+    display: none;
+}
+@media (max-width: 480px) {
+  .nav {
+    padding: 1rem;
+  }
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 35px;
+    top: 72px;
+    padding-top: 0.2rem;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 7px;
+    border-top: 2px solid #eee;
+  
+  }
+  .nav > .nav-list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+    width: 40%;
+    background-color: #403e3feb;
+    height: 0;
+    transition: all 0.3s ease-in;
+    top: 108px;
+    right: 10px;
+    overflow: hidden;
+    z-index: 50000;
+    padding:0;
+    justify-content: flex-start;
+  }
+  .nav > .nav-list > li {
+    width: 50%;
+   
+    position: relative;
+    /* padding: 20px; */
+  margin-right: 0;
+    text-align: center;
+  }
+  .nav > #nav-check:checked ~ .nav-list {
+    height: 25%;
+  }
 }

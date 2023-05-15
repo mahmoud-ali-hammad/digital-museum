@@ -6,6 +6,7 @@ import ProductPage from './pages/productPage';
 import Halls from './pages/halls';
 import Opnennigours from './pages/opennigours';
 import Details from './pages/hallsdetails';
+import Reserve from './pages/ticket';
 const router1 = createBrowserRouter([
   {
     path: '/',
@@ -15,7 +16,9 @@ const router1 = createBrowserRouter([
       { path: '/product', element: <ProductPage /> },
       { path: '/halls/:id', element: <Halls /> },
       {path:'halls/:id/:id2',element:<Details/>}
-      ,{ path: '/openning-ours',element:<Opnennigours/>}
+      ,{ path: '/openning-ours',element:<Opnennigours/>},{
+        path:'/ticket',element:<Reserve/>
+      }
     ],
   },
 ]);

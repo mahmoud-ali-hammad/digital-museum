@@ -7,7 +7,7 @@ function Footer() {
     <>
       <div className='cfooter'>
         <img src={require('./image/2.png')} alt='logo' />
-        <h2>We Are Social</h2>
+        <h2>Feel Free To drop Us A Line</h2>
         <div>
           <AiFillInstagram className='icons' />
           <FiFacebook className='icons' />

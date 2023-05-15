@@ -1,0 +1,84 @@
+.swiper {
+  height: 60vh;
+}
+.main-content {
+  margin: 30px;
+  padding: 15px;
+}
+.main-content .ad {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.main-content h4 {
+  text-align: left;
+  width: fit-content;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid var(--second-color);
+}
+
+label {
+  text-align: left;
+  display: block;
+  padding: 10px;
+  font-size: 20px;
+}
+input {
+  display: block;
+  text-align: left;
+  padding-left: 10px;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 18px;
+  margin-top: 10px;
+}
+.main-content h1 {
+  width: fit-content;
+  font-size: 30px;
+  font-weight: bold;
+}
+.main-content button {
+  text-align: left;
+  /* width:fit-content; */
+  margin-left: 0;
+  padding: 5px 10px;
+  border: 1px solid var(--main-color);
+  font-size: 20px;
+  transition: 0.4s ease;
+  display: inline-block;
+  background-color: white;
+  box-sizing: border-box;
+  height: 40px;
+}
+.main-content button:hover {
+  background-color: white;
+  color: black;
+}
+.main-content button.selected {
+  background-color: var(--second-color);
+  color: white;
+  border: none;
+}
+.df {
+  height: 1px;
+  background-color: black;
+  width: 100%;
+  margin-top: 25px;
+}
+.reserv {
+  margin: 5px;
+}
+table {
+  width: 100%;
+}
+table input {
+  width: 30px;
+}
+tr {
+  border-bottom: 1px solid #ccc;
+}
+td {
+  padding: 10px;
+}

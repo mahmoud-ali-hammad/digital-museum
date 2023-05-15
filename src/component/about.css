@@ -110,3 +110,9 @@ content: "";
     right: 101px;
     z-index: -1;
 }
+@media(max-width:767px)
+{
+    .btn3{
+        margin-bottom: 30px;
+    }
+}

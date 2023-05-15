@@ -1,6 +1,6 @@
 import React from 'react';
 import './onenav.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   AiFillClockCircle,
   AiFillInstagram,
@@ -9,6 +9,7 @@ import {
 import { BiDirections } from 'react-icons/bi';
 import { FiFacebook, FiTwitter } from 'react-icons/fi';
 function Onenav() {
+  const navigat=useNavigate();
   return (
     <>
       <div className='parent'>
@@ -17,7 +18,7 @@ function Onenav() {
             <div className='times'>
               <AiFillClockCircle className='icon' />
               <p className='openText'>
-             <Link to={'/openning-ours'} >  Plan Your Visit Today: 09 <span>---</span> 07</Link> {' '}
+             <Link to={'/openning-ours'} >  Plan Your Visit Today: 09 <span>---</span> 07</Link> 
               </p>
             </div>
             <div className='dir'>
@@ -33,7 +34,7 @@ function Onenav() {
             <FiFacebook className='icons' />
             <FiTwitter className='icons' />
             <AiOutlineSearch className='icons' />
-            <button className='btn'>Ticket</button>
+            <button className='btn' onClick={()=>{navigat('/ticket')}}>Ticket</button>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideLength = sliderData.length;
 
-  const autoScroll = true;
+  const autoScroll = false;
   let slideInterval;
   let intervalTime = 5000;
 
