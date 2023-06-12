@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 import dateFormat from 'dateformat';
 // import DatePicker from "react-datepicker";
@@ -16,29 +16,49 @@ import './ticket.css';
 import 'swiper/css/navigation';
 
 // import required modules
-import { Navigation } from 'swiper';
+import { Controller, Navigation } from 'swiper';
 function Reserve() {
-  const ob1 = [
-    {
-      name: 'Visitor - Egyptian',
-      name2: 'Student - Egyptian',
-      price: 60,
-      price2: 120,
-    },
-    {
-      name: 'Visitor - Other Nationality',
-      price: 120,
-      name2: 'Student - Other Nationality',
-      price2: '300',
-    },
-  ];
+  const [loading, setLoading] = useState(false);
+  const [tickets, setTickets] = useState([]);
+  const [personal, setPersonal] = useState({});
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `https://digital-museum-production.up.railway.app/reservation/ticket/`
+        );
+        const data = await response.json();
+        setTickets(
+          data.map(info => {
+            return {
+              id: info.id,
+              type: info.ticket_type,
+              price: info.price,
+              quantity: 0,
+              subtotal: 0,
+            };
+          })
+        );
+
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  console.log(tickets);
   const [value, setvalue] = useState(null);
-  const [openwindow, setopenwindow] = useState(1);
-  const [sub, setsub] = useState(0);
-  const [sub2, setsub2] = useState(0);
-  const [objectx, setobectx] = useState(0);
-  const [qua, setqua] = useState(0);
-  const [qua2, setqua2] = useState(0);
+  const [total, setTotal] = useState(0);
+  useEffect(() => {
+    let tempTotal = 0;
+    for (let i = 0; i < tickets.length; i++) {
+      tempTotal += tickets[i].subtotal;
+    }
+    setTotal(tempTotal);
+  }, [tickets]);
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -52,6 +72,59 @@ function Reserve() {
         <div className='main-content'>
           <h2 className='ad'>Book Your ticket</h2>
           <h4>Tickets</h4>
+
+          <div className='personal'>
+            <h4>personal information</h4>
+            <div className='personlinfo'>
+              <label htmlFor='FName'>Enter Your first Name</label>
+              <input
+                type='text'
+                required
+                id='FName'
+                onChange={e => {
+                  let fName = personal;
+                  fName.firstName = e.target.value;
+                  setPersonal(fName);
+                }}
+              />
+              <label htmlFor='LName'>Enter Your Last Name</label>
+              <input
+                type='text'
+                required
+                id='LName'
+                onChange={e => {
+                  let lName = personal;
+                  lName.lastName = e.target.value;
+                  setPersonal(lName);
+                }}
+              />
+              <label htmlFor='email'>Enter Your Email</label>
+              <input
+                type='email'
+                required
+                id='email'
+                onChange={e => {
+                  let email = personal;
+                  email.email = e.target.value;
+                  setPersonal(email);
+                }}
+              />
+              <label htmlFor='Phone'>Enter Your phone</label>
+              <input
+                type='tel'
+                required
+                id='Phone'
+                onChange={e => {
+                  let numb = personal;
+                  numb.number = e.target.value;
+                  setPersonal(numb);
+                }}
+              />
+              {console.log(personal)}
+            </div>
+          </div>
+          <hr className='df'></hr>
+
           <label for='start'>Enter The Date of Visit:</label>
           <DatePicker
             label='Choose Date'
@@ -61,36 +134,6 @@ function Reserve() {
             inputFormat='MM-DD-YYYY'
           />
           <hr className='df'></hr>
-          {/* <DatePicker  onChange={date=>setvalue(date)} minDate={new Date()} selected={value} dateFormat='yyyy/MM/dd'/> */}
-          <h1>Nationality:</h1>
-          <button
-            onClick={() => {
-              setopenwindow(1);
-              setobectx(0);
-              setqua(0);
-              setqua2(0)
-              setsub(0)
-              setsub2(0)
-            }}
-            className={openwindow === 1 && 'selected'}
-            style={{ borderRight: openwindow === 2 && 'none' }}
-          >
-            Egyptian
-          </button>
-          <button
-            onClick={() => {
-              setopenwindow(2);
-              setobectx(1);
-              setqua(0);
-              setqua2(0)
-              setsub(0)
-              setsub2(0)
-            }}
-            className={openwindow === 2 && 'selected'}
-            style={{ borderLeft: openwindow === 1 && 'none' }}
-          >
-            Other Nationalities
-          </button>
           <div className='reserv'>
             <h2>Choose your ticket:</h2>
             <table>
@@ -101,43 +144,71 @@ function Reserve() {
                 <td>subtotal</td>
               </thead>
               <tbody>
-                <tr>
-                  <td>{ob1[objectx].name}</td>
-                  <td>
-                    {' '}
-                    <input min={0}
-                      type='number'
-                      step={1}
-                      value={qua}
-                      onChange={e => {
-                        setsub(e.target.value * ob1[objectx].price);
-                        setqua(e.target.value)
-                      
-                      }}
-                    />
-                  </td>
-                  <td>{ob1[objectx].price}</td>
-                  <td>{sub}</td>
-                </tr>
-                <tr>
-                  <td>{ob1[objectx].name2}</td>
-                  <td>
-                    <input min={0}
-                      type='number'
-                      step={1}
-                      value={qua2}
-                      onChange={e => {
-                        setsub2(e.target.value * ob1[objectx].price2);
-                        setqua2(e.target.value)
-                      }}
-                    />
-                  </td>
-                  <td>{ob1[objectx].price2}</td>
-                  <td>{sub2}</td>
-                </tr>
+                {tickets.map((ticket, index) => {
+                  return (
+                    <tr>
+                      <td>{ticket.type}</td>
+                      <td>
+                        <input
+                          min={0}
+                          type='number'
+                          step={1}
+                          onChange={e => {
+                            let ticketchange = [...tickets];
+                            ticketchange[index].quantity = parseInt(
+                              e.target.value
+                            );
+                            ticketchange[index].subtotal =
+                              ticketchange[index].quantity * ticket.price;
+                            setTickets(ticketchange);
+                          }}
+                        />
+                      </td>
+                      <td>{ticket.price}</td>
+                      <td>{ticket.subtotal}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
-            <h2>Total: {sub+sub2}</h2>
+            <h2>Total: {total}</h2>
+            <button
+              onClick={() => {
+                fetch(
+                  `https://digital-museum-production.up.railway.app/reservation/order/`,
+                  {
+                    method: 'POST',
+                    body: JSON.stringify({
+                      first_name: personal.firstName,
+                      last_name: personal.lastName,
+                      email: personal.email,
+                      phone: personal.number,
+                      date: value,
+                      tickets: tickets
+                        .filter(ticket => ticket.quantity > 0)
+                        .map(ticket => {
+                          return {
+                            ticket: ticket.id,
+                            amount: ticket.quantity,
+                          };
+                        }),
+                    }),
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                  }
+                )
+                  .then(res => {
+                    console.log(res);
+                    return res.json();
+                  })
+                  .then(res => {
+                    console.log(res);
+                  });
+              }}
+            >
+              Reserve
+            </button>
           </div>
         </div>
       </LocalizationProvider>
