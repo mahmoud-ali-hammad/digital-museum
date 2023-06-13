@@ -13,7 +13,7 @@ function Artview(props) {
           <img src={mm.image} alt='logo' />
         </div>
         <h2>{mm.heading}</h2>
-        <p>{mm.desc}</p>
+        {/* <p>{mm.desc}</p> */}
         <Link to={`/halls/${props.id}/${mm.heading}`} >more</Link>
       </div>
     </>})}

@@ -14,7 +14,9 @@ code {
     monospace;
 }
 :root{
+  /* --main-color:#516091; */
   --main-color:#403e3f;
+  /* --second-color:#74bec1; */
   --second-color:#d99578;
   transition: 0.5s; ;
   -webkit-transition:.5s ;

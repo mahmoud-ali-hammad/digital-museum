@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { sliderData } from "./Imagesliderdata";
+import imageone from './image/imageone.png'
 import './imageslider.css'
+import { useNavigate } from "react-router-dom";
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -10,7 +12,7 @@ const Slider = () => {
   const autoScroll = false;
   let slideInterval;
   let intervalTime = 5000;
-
+const navigate=useNavigate()
   const nextSlide = () => {
     setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
     console.log("next");
@@ -53,7 +55,7 @@ const Slider = () => {
                   <h2>{slide.heading}</h2>
                   <p>{slide.desc}</p>
                   <hr />
-                  <button className="btnn">Get Started</button>
+                  <button className="btnn"onClick={()=>{navigate('/ticket')}} >Book Ticket</button>
                 </div>
               </div>
             )}

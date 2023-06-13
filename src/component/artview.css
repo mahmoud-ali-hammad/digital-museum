@@ -28,8 +28,10 @@ position: relative;
 font-size: 40px;
 margin: auto;
 width: fit-content;
+margin-top: 20px;
+margin-bottom: 20px;
 }
-.coll h2:after{
+/* .coll h2:after{
     content: "";
     position: absolute;
     bottom: -20px;
@@ -37,7 +39,7 @@ width: fit-content;
     height: 5px;
    background-color: var(--second-color);
     width: calc(100% - 30px);
-}
+} */
 .coll p {
     line-height: 2;
     font-size: 18px;

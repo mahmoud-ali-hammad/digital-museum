@@ -23,7 +23,7 @@ function HomePage() {
 useEffect(()=>{
   const fetchData = async () => {
   try {
-    const response = await fetch("https://digital-museum-production.up.railway.app/Meseum-Info/");
+    const response = await fetch("https://dmuseum.fly.dev/Meseum-Info/");
     const data = await response.json();
     setHdata(data);
     setLoading(false);
@@ -36,14 +36,14 @@ useEffect(()=>{
 },[])
 
   return( <div>
-{loading ? (<h2>loading....</h2>):
+{loading ? (<h2>loading..........</h2>):
     
       (<div>
       <Slider />
 
       <About {...Hdata[0]} />
       <Calender />
-      <Events calenderdata={data} />
+      <Events calenderdata={Hdata[0]} />
       <Rvideo />
       <div className='high'>
         <h1>Highlights</h1>

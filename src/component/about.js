@@ -3,7 +3,7 @@ import './about.css';
 function About(props) {
   const downloadHanler = () => {
     // console.log(props.aboutinfo);
-
+    console.log(props.downloadableItems[0].link);
   };
   return (
     <>
@@ -12,19 +12,17 @@ function About(props) {
           <div className='rabout'>
             <p className='txt1'>ABOUT US</p>
             <h1 className='txt2'>{props.name}</h1>
-            <p className='txt3'>
-              {props.about
-              
-              /* The Royal carriages Museum in Boulaq is one of the earliest of its
-              kind worldwide, both from the prospect of the authenticity of its
-              building and the originality of its displays. The building was
-              particularly adapted to preserve the cultural heritage of the
-              royal carriages and all related material dating back to the era of
-              Mohammed Ali Dynasty. */}
-            </p>
-            <button className='btn3' onClick={downloadHanler}>
+            <p className='txt3'>{props.about}</p>
+
+            <a
+              className='btn3'
+              download
+              href='https://arts981.s3.amazonaws.com/files/rcm-en.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAV2QFCCARZAL3X7OR%2F20230613%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20230613T140534Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5ae83e99793ad33049511374dc27a43e82feaea8799e98205c5748ef6d5928af'
+              target='_blank'
+            >
+       
               Download The Brochure
-            </button>
+            </a>
           </div>
           <div className='labout'>
             <div className='text'>

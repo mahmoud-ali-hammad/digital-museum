@@ -1,0 +1,44 @@
+.error{
+width: 100%;
+height: 600px;
+  margin: 0;
+}
+.wcontent{
+  display: flex;
+  background-color: white;
+ 
+  width: 80%;
+  margin: auto;
+ height: calc(100vh - 150px);
+ margin-top: 30px;
+ margin-bottom: 44px;
+}
+.wcontent .right{
+width: 50%;
+}
+.wcontent .left{
+  text-align: center;
+  width: 50%;
+  padding: 30px;
+}
+.wcontent .left h2{
+  font-family: prata;
+  font-size: 50px;
+  width: fit-content;
+  margin: auto;
+  border-bottom: solid red 2px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: hwb(0 38% 60%);
+}
+.wcontent .left h3{
+  font-size: 20px;
+  color: #777777;
+  
+}
+.wcontent .left p{
+  margin-top: 30px;
+
+  font-size: 18px;
+  color: #777;
+}
