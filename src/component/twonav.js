@@ -18,9 +18,7 @@ function Twonav() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          'https://digital-museum-production.up.railway.app/arts/halls/'
-        );
+        const response = await fetch('https://dmuseum.fly.dev/arts/halls/');
         const data = await response.json();
         setHalls(data.results);
         setLoading(false);
@@ -31,7 +29,6 @@ function Twonav() {
     };
     fetchData();
   }, []);
-  // const halls=['One','Two','Three'];
   return (
     <>
       {loading ? (
@@ -85,6 +82,17 @@ function Twonav() {
                         );
                       })}
                     </ul>
+                  </li>
+                  <li>
+                    <NavLink
+                      to={'/guide'}
+                      className={({ isActive }) =>
+                        isActive ? classes.active : undefined
+                      }
+                      end
+                    >
+                      Mission & Vision
+                    </NavLink>
                   </li>
                   <li>
                     <a href='#A'>About</a>

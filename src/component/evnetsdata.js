@@ -1,13 +1,10 @@
 export const edata=[
     {
-        date:'12-14-2020'
-        ,title:'mahmoud aly'
-        ,body:'best concert ever'
+        date:'20-6-2023'
+        ,title:'November Cultural Events'
+        ,body:'On the occasoin of international childrens , and in light of  the joint cooperation between The Royal Carriage museum And the ministry of culture.'
     },
-    {       date:'12-14-2020'
-    ,title:'ahmed aly'
-    ,body:'best concert ever'},
-    {       date:'12-14-2020'
-    ,title:'mego aly'
-    ,body:'best concert ever'}
+    {       date:'25-6-2023'
+    ,title:'Royal Carriages Museum opening soon'
+    ,body:' After the inauguration of Baron Empain Palce, The Royal Carriages Museum in Boulaq, Cairo, is to open very soon. Another important archaeological project which will attract tourists and Egyptian visitors.'},
 ]

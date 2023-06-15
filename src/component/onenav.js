@@ -33,7 +33,6 @@ function Onenav() {
             <AiFillInstagram className='icons' />
             <FiFacebook className='icons' />
             <FiTwitter className='icons' />
-            <AiOutlineSearch className='icons' />
             <button className='btn' onClick={()=>{navigat('/ticket')}}>Ticket</button>
           </div>
         </div>

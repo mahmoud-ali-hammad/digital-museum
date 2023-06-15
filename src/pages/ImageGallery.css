@@ -1,0 +1,4 @@
+.image-gallery-slide img {
+  object-fit: contain;
+  height: 400px;
+}

@@ -7,8 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 /* list-style: none; */
 background-color: white;
-}
 
+}
+button{
+  cursor: pointer;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

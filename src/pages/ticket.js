@@ -25,7 +25,7 @@ function Reserve() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://digital-museum-production.up.railway.app/reservation/ticket/`
+          `https://dmuseum.fly.dev/reservation/ticket/`
         );
         const data = await response.json();
         setTickets(
@@ -172,10 +172,10 @@ function Reserve() {
               </tbody>
             </table>
             <h2>Total: {total}</h2>
-            <button
+            <button className='one'
               onClick={() => {
                 fetch(
-                  `https://digital-museum-production.up.railway.app/reservation/order/`,
+                  `https://dmuseum.fly.dev/reservation/order/`,
                   {
                     method: 'POST',
                     body: JSON.stringify({

@@ -7,6 +7,8 @@ import Halls from './pages/halls';
 import Opnennigours from './pages/opennigours';
 import Details from './pages/hallsdetails';
 import Reserve from './pages/ticket';
+import VisitGuide from './pages/visitGuide';
+import Map from './pages/map'
 const router1 = createBrowserRouter([
   {
     path: '/',
@@ -15,10 +17,14 @@ const router1 = createBrowserRouter([
       { path: '/', element: <HomePage /> },
       { path: '/product', element: <ProductPage /> },
       { path: '/halls/:id', element: <Halls /> },
-      {path:'halls/:id/:id2',element:<Details/>}
-      ,{ path: '/openning-ours',element:<Opnennigours/>},{
-        path:'/ticket',element:<Reserve/>
-      }
+      { path: 'halls/:id/:id2', element: <Details /> },
+      { path: '/openning-ours', element: <Opnennigours /> },
+      {
+        path: '/ticket',
+        element: <Reserve />,
+      },
+      { path: '/guide', element: <VisitGuide /> },
+      {path:'/map',element:<Map/>},
     ],
   },
 ]);

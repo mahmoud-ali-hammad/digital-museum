@@ -1,0 +1,15 @@
+.cnnt{
+  width: 80%;
+  margin: auto;
+}
+.cnnt .map{
+  text-align: center;
+  margin: 30px 0;
+}
+.wh h1{ 
+  padding: 20px;
+  padding-left: 10%;
+  margin-top:0;
+  background-color: #eae6e8;
+  font-family: prata;
+}

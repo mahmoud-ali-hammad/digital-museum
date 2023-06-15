@@ -14,8 +14,8 @@ function Calender() {
       <div className='pr2'>
         <div className='ct'>
           <div className='cart'>
-            <p>Museum Guide</p>
-            <h2>Visit</h2>
+            <p >Museum Guide</p>
+            <h2 onClick={data=>{nv('/guide')}} >Visit</h2>
           </div>
           <div className='cart'>
             <div className='cart2'>
@@ -25,7 +25,7 @@ function Calender() {
             </div>
           </div>
           <div className='cart'>
-            <CiLocationOn className='ic' onClick={goto} />
+            <CiLocationOn className='ic' onClick={d=>{nv('/map')}} />
             <h2>Address</h2>
             <p>Ehawamdia Main Street</p>
           </div>

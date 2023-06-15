@@ -12,7 +12,7 @@ const [loading,setLoading]=useState(true)
   useEffect(()=>{
     const fetchData = async () => {
     try {
-      const response = await fetch(`https://digital-museum-production.up.railway.app/arts/artobjects/?hall__name=${id}`);
+      const response = await fetch(`https://dmuseum.fly.dev/arts/artobjects/?hall__name=${id}`);
       const data = await response.json();
       const filtered=data.results.filter(info=>info.name===id2
       );

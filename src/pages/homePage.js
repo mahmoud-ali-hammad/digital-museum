@@ -6,11 +6,13 @@ import Events from '../component/events';
 import Artcnt from '../component/artcnt';
 import Rvideo from '../component/video';
 import Footer from '../component/footer';
+import MyImageGallery from './gallery'
 import { useEffect,useState } from 'react';
 import './homepage.css'
 // import Ab from "../component/swiper";
 import { sliderData } from '../component/Imagesliderdata';
 import {test} from '../component/data';
+import ContentSlider from './sslider';
 function HomePage() {
   // import Ab from "../component/swiper";
   const data = [
@@ -23,10 +25,9 @@ function HomePage() {
 useEffect(()=>{
   const fetchData = async () => {
   try {
-    const response = await fetch("https://dmuseum.fly.dev/Meseum-Info/");
-    const data = await response.json();
-    setHdata(data);
-    setLoading(false);
+    const response = await fetch("https://dmuseum.fly.dev/Meseum-Info/").then(response=>{return response.json()}).then(data => {setHdata(data);
+    setLoading(false);} )
+   
   } catch (error) {
     console.error(error);
     setLoading(false);
@@ -34,22 +35,28 @@ useEffect(()=>{
 };
   fetchData();
 },[])
+// console.log(Hdata[0].media)
 
   return( <div>
 {loading ? (<h2>loading..........</h2>):
     
       (<div>
       <Slider />
-
       <About {...Hdata[0]} />
       <Calender />
+
       <Events calenderdata={Hdata[0]} />
+      <div className='high'>
+        <h1>Gallery</h1>
+        <MyImageGallery/>
+      </div>
       <Rvideo />
       <div className='high'>
         <h1>Highlights</h1>
       <Artcnt art={artdata} />
-      <Artcnt art={test} />
       </div>
+      
+
       <Footer />
       </div>
      )
