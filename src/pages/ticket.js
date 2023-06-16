@@ -59,6 +59,7 @@ function Reserve() {
     }
     setTotal(tempTotal);
   }, [tickets]);
+  
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>

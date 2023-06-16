@@ -9,6 +9,7 @@ import Details from './pages/hallsdetails';
 import Reserve from './pages/ticket';
 import VisitGuide from './pages/visitGuide';
 import Map from './pages/map'
+import Hotels from './pages/hotels';
 const router1 = createBrowserRouter([
   {
     path: '/',
@@ -24,7 +25,7 @@ const router1 = createBrowserRouter([
         element: <Reserve />,
       },
       { path: '/guide', element: <VisitGuide /> },
-      {path:'/map',element:<Map/>},
+      {path:'/map',element:<Map/>},{path:'/hotels',element:<Hotels/>}
     ],
   },
 ]);

@@ -6,6 +6,7 @@ import ContentSlider from './sslider';
 import MyImageGallery from './gallery';
 import two from '../component/image/imageone.png';
 import Footer from '../component/footer';
+import Loader from '../component/loader';
 function VisitGuide() {
   const nv = useNavigate();
   const [loading, setLoading] = useState(true);
@@ -40,8 +41,7 @@ function VisitGuide() {
     <>
       {loading ? (
         <div className='error'>
-          {' '}
-          <p>waiting for data</p>
+         <Loader/>
         </div> // Show loading indicator when isLoading is true
       ) : (
       <div>

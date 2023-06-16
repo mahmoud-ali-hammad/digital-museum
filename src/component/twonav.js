@@ -85,13 +85,24 @@ function Twonav() {
                   </li>
                   <li>
                     <NavLink
+                      to={'/hotels'}
+                      className={({ isActive }) =>
+                        isActive ? classes.active : undefined
+                      }
+                      end
+                    >
+                    Hotels
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
                       to={'/guide'}
                       className={({ isActive }) =>
                         isActive ? classes.active : undefined
                       }
                       end
                     >
-                      Mission & Vision
+                    Vision
                     </NavLink>
                   </li>
                   <li>
@@ -99,39 +110,7 @@ function Twonav() {
                   </li>
                 </ul>
               </nav>
-              {/*               
-              <ul>
-                <li>
-                  <NavLink
-                    to={'/'}
-                    className={({ isActive }) =>
-                      isActive ? classes.active : undefined
-                    }
-                    end
-                  >
-                    Home
-                  </NavLink>
-                </li>
-                <li className='me'>
-                  <a>Halls</a>
-                  <ul className='drop-down'>
-                    {halls.map((m, index) => {
-                      return (
-                        <li
-                          onClick={() => {
-                            navigate(`/halls/${m.name}`);
-                          }}
-                        >
-                          <a>{m.name}</a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </li>
-                <li>
-                  <a href='#A'>About</a>
-                </li>
-              </ul> */}
+              
             </div>
           </div>
         </div>

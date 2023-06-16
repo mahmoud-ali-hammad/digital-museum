@@ -3,6 +3,7 @@ import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Footer from '../component/footer';
 import './hallsdetails.css'
+import Loader from "../component/loader";
 function Details (){
   // const {id}
   const { id2,id } = useParams();
@@ -31,7 +32,7 @@ return (<>
 
  
       {loading ? (
-       <div className="error"> <p>waiting for data</p></div> // Show loading indicator when isLoading is true
+       <div ><Loader/></div> // Show loading indicator when isLoading is true
       ) : ( <div className="wcontent">
         <div className="right">
         <img className='photo' src={item[0].images[0].image} alt='logo' />

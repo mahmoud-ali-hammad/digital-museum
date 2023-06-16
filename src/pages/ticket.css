@@ -11,7 +11,8 @@
   margin: 0;
 }
 .swiper {
-  height: 60vh;
+  height: 85vh;
+  /* transform: scale(0.8); */
 }
 .main-content {
   margin: 30px;
