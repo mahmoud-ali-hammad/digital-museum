@@ -52,5 +52,17 @@ position: relative;
     .main .vtext{
         width: 60%;
         object-fit: cover;
+        padding: 10px;
+        left: 84px;
+    }
+    .main .vtext h2{
+font-size:20px
+    }
+    .main .vtext p{
+        font-size: 16px;
+    }
+    .main .vtext button{
+        padding: 8px 16px;
+        font-size: 9px;
     }
 }

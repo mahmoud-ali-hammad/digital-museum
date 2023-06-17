@@ -103,7 +103,7 @@
   margin: 5px;
   color: #777;
 }
-@media(max-width: 868px){
+@media(max-width: 778px){
   .vision{
     flex-direction: column;
   }
@@ -112,4 +112,7 @@
       font-size: 18px;
     
   }
+  .whole .right table{
+    margin-left: 0;
+   }
 }

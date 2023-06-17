@@ -71,7 +71,9 @@ function Twonav() {
                     <a>Halls</a>
                     <ul className='drop-down'>
                       {halls.map((m, index) => {
-                        return (
+                       if(m.id!==8)
+                        {
+                          return (
                           <li
                             onClick={() => {
                               navigate(`/halls/${m.name}`);
@@ -79,7 +81,7 @@ function Twonav() {
                           >
                             <a>{m.name}</a>
                           </li>
-                        );
+                        );}
                       })}
                     </ul>
                   </li>

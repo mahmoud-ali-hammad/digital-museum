@@ -30,7 +30,7 @@ function Calender() {
             <p>Ehawamdia Main Street</p>
           </div>
           <div className='cart'>
-            <BsFillTicketFill className='ic' />
+            <BsFillTicketFill className='ic' onClick={d=>{nv('/ticket')}} />
             <h2>Get Ticket</h2>
             <p>Buy Ticket</p>
           </div>

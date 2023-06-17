@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './artview.css';
 import { sliderData } from './Imagesliderdata';
+import { useNavigate } from 'react-router-dom';
 function Artview(props) {
   const finaldata=props.dataview;
+  const nv=useNavigate()
   return (
     <>
     {finaldata.map((mm,index)=> 
@@ -15,6 +17,11 @@ function Artview(props) {
         <h2>{mm.heading}</h2>
         {/* <p>{mm.desc}</p> */}
         <Link to={`/halls/${props.id}/${mm.heading}`} >more</Link>
+        {/* <button onClick={e=>{nv('/requests', {
+                    state: {
+                     
+                    },
+                  });}}></button> */}
       </div>
     </>})}
       {/* <div className='coll'>

@@ -13,3 +13,13 @@
   background-color: #eae6e8;
   font-family: prata;
 }
+@media (max-width:778px)
+{
+.cnnt .map{
+text-align: right;
+}
+.cnnt{
+  
+  margin-left: 0;
+}
+}

@@ -71,7 +71,7 @@ function HomePage() {
     };
     fetchData();
   }, []);
-
+console.log(data)
   return (
     <div>
       {loading ? (
@@ -88,9 +88,12 @@ function HomePage() {
             <MyImageGallery />
           </div>
           <Rvideo />
+       
+       
           <div className='high'>
             <h1>Highlights</h1>
-            <Artcnt art={data} />
+            <Artcnt art={data}  id={'Inventory Hall'}/>
+
           </div>
 
           <Footer />

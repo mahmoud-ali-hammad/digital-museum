@@ -150,6 +150,21 @@ hr {
     width: 60%;
     padding: 1rem;
   }
+  .content h2{
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .content hr{
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+  .content .btnn{
+    padding: 7px 10px;
+  }
+  .content p{
+    margin-bottom: 2px;
+  }
 }
 /* @media screen and (max-width: 600px) {
 

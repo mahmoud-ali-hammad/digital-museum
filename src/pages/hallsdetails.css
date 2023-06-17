@@ -53,6 +53,7 @@ width: 50%;
   }
   .wcontent .left{
     width: 100%;
+    padding-top: 0;
     /* height: 50%; */
   }
   .wcontent .right{
