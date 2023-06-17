@@ -53,6 +53,12 @@ text-align: center;
     .rabout .txt3 {
         font-size: 14px;
     }
+    .rabout .txt3{
+        margin-bottom: 20px;
+    }
+    .rabout .txt3 {
+        font-size: 12px;
+    }
 }
 .btn3 {
     color: white;
@@ -114,5 +120,10 @@ content: "";
 {
     .btn3{
         margin-bottom: 30px;
+    }
+    .rabout{
+        
+    margin-bottom: 35px;
+
     }
 }

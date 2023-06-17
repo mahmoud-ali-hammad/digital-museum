@@ -29,7 +29,7 @@ const [loading,setLoading]=useState(true)
   console.log(item);
 
 return (<>
-
+<div>
  
       {loading ? (
        <div ><Loader/></div> // Show loading indicator when isLoading is true
@@ -46,7 +46,7 @@ return (<>
       )}
       <Footer />
   
-
+      </div>
 </>)
 }
 export default Details
