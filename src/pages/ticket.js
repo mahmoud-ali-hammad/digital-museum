@@ -9,6 +9,11 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { sliderData } from '../component/Imagesliderdata';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// Initialize react-toastify
+
 // Import Swiper styles
 
 import 'swiper/css';
@@ -49,7 +54,7 @@ function Reserve() {
     fetchData();
   }, []);
 
-  console.log(tickets);
+  // console.log(tickets);
   const [value, setvalue] = useState(null);
   const [total, setTotal] = useState(0);
   useEffect(() => {
@@ -59,7 +64,7 @@ function Reserve() {
     }
     setTotal(tempTotal);
   }, [tickets]);
-  
+
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -121,7 +126,7 @@ function Reserve() {
                   setPersonal(numb);
                 }}
               />
-              {console.log(personal)}
+              {/* {console.log(personal)} */}
             </div>
           </div>
           <hr className='df'></hr>
@@ -173,39 +178,77 @@ function Reserve() {
               </tbody>
             </table>
             <h2>Total: {total}</h2>
-            <button className='one'
+            <button
+              className='one'
               onClick={() => {
-                fetch(
-                  `https://dmuseum.fly.dev/reservation/order/`,
-                  {
-                    method: 'POST',
-                    body: JSON.stringify({
-                      first_name: personal.firstName,
-                      last_name: personal.lastName,
-                      email: personal.email,
-                      phone: personal.number,
-                      date: value,
-                      tickets: tickets
-                        .filter(ticket => ticket.quantity > 0)
-                        .map(ticket => {
-                          return {
-                            ticket: ticket.id,
-                            amount: ticket.quantity,
-                          };
-                        }),
-                    }),
-                    headers: {
-                      'Content-Type': 'application/json',
-                    },
-                  }
-                )
-                  .then(res => {
-                    console.log(res);
-                    return res.json();
-                  })
-                  .then(res => {
-                    console.log(res);
+                async function postR() {
+                  const id = toast.loading('Please wait...', {
+                    position: 'bottom-center',
                   });
+                  const response = await fetch(
+                    `https://dmuseum.fly.dev/reservation/order/`,
+                    {
+                      method: 'POST',
+                      body: JSON.stringify({
+                        first_name: personal.firstName,
+                        last_name: personal.lastName,
+                        email: personal.email,
+                        phone: personal.number,
+                        date: value,
+                        tickets: tickets
+                          .filter(ticket => ticket.quantity > 0)
+                          .map(ticket => {
+                            return {
+                              ticket: ticket.id,
+                              amount: ticket.quantity,
+                            };
+                          }),
+                      }),
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                    }
+                  );
+                  // .then(res => {
+                  //   console.log(res);
+                  //   return res.json();
+                  // })
+                  // .then(res => {
+                  //   console.log(res);
+                  // });
+                  console.log(response);
+                  if (response.status === 201) {
+                    toast.update(id, {
+                      render: 'success to Reserve',
+                      type: 'success',
+                      isLoading: false,
+                      position: 'bottom-center',
+                      hideProgressBar: true,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                      theme: 'light',
+                      autoClose: true,
+                    });
+                  } else {
+                    console.log('re');
+                    toast.update(id, {
+                      render: 'Reserve falied',
+                      type: 'error',
+                      isLoading: false,
+                      position: 'bottom-center',
+                      hideProgressBar: true,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                      theme: 'light',
+                      autoClose: true,
+                    });
+                  }
+                }
+                postR();
               }}
             >
               Reserve

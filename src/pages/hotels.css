@@ -20,6 +20,12 @@
   position: relative;
   flex-direction: column;
   align-items: center;
+
+}
+.body .one:hover{
+  cursor: pointer;
+  border: var(--second-color) 1px solid;
+  border-radius: 1rem;
 }
 .body .one .two{
   display: flex;

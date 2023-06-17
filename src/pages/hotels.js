@@ -40,7 +40,7 @@ function Hotels() {
 
 {data.map(d=>{
 return (
-<div className="one" onClick={f=>{nv(d.link)}}>
+<div className="one" onClick={f=>{window.open(d.link, '_blank')}}>
   <div className="two">
     <div className="three">
       {console.log(d.link)}

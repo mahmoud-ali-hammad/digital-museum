@@ -10,6 +10,8 @@ import Reserve from './pages/ticket';
 import VisitGuide from './pages/visitGuide';
 import Map from './pages/map'
 import Hotels from './pages/hotels';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 const router1 = createBrowserRouter([
   {
     path: '/',
@@ -33,6 +35,7 @@ function App() {
   return (
     <div className='App'>
       <RouterProvider router={router1} />
+      <ToastContainer />
     </div>
   );
 }
